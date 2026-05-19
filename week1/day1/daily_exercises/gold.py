@@ -74,24 +74,24 @@ print(f"The greatest number is: {greatest}")
 
 # # Exercise 6
 
-# Ask the user to input a number from 1 to 9 (including).
-# Get a random number between 1 and 9. Hint: random module.
-# If the user guesses the correct number print a message that says “Winner”.
-# If the user guesses the wrong number print a message that says “Better luck next time.”
-# Bonus: use a loop that allows the user to keep guessing until they want to quit.
-# Bonus 2: on exiting the loop, tally up and display total games won and lost.
+# Demandez à l’utilisateur d’entrer un chiffre de 1 à 9 (y compris).
+# Prends un nombre aléatoire entre 1 et 9. Indice : module aléatoire.
+# Si l’utilisateur devine le bon numéro, affiche un message indiquant « Gagnant ».
+# Si l’utilisateur devine le mauvais numéro, affichez un message disant « Bonne chance la prochaine fois. »
+# Bonus : utilisez une boucle qui permet à l’utilisateur de continuer à deviner jusqu’à ce qu’il veuille arrêter.
+# Bonus 2 : en quittant la boucle, comptez et affichez le total des parties gagnées et perdues.
 
-import random
+import random   
+number = random.randint(1, 9)
 
-number = int(input("Enter a number from 1 to 9: "))
-random_number = random.randint(1, 9)
+guess = int(input("Enter a number between 1 and 9: "))
 
-while True:
-    if number == random_number:
-        print("Winner!")
-        break
-    else:
-        print("Better luck next time.")
-        break
+while guess != number:
+    print("Wrong guess. Try again.")
+    guess = int(input("Enter a number between 1 and 9: "))
+
+print("You won!")
+
+
     
 
