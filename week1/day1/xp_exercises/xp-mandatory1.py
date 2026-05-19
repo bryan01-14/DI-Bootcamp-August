@@ -24,4 +24,6 @@ for i in range(len(word)):
     if i == 0 or word[i] != word[i - 1]:
         new_word += word[i]
 
+print(new_word)
+
 
