@@ -1,74 +1,27 @@
-# # Exercise 1
 
+#     Ask the user for their birthdate (specify the format, for example: DD/MM/YYYY).
+#     Display a little cake as seen below:
 
-# 1. Ask the user to input a month (1 to 12).
-# 2. Display the season of the month received:
-# - Spring runs from March (3) to May (5)
-# - Summer runs from June (6) to August (8)
-# - Autumn runs from September (9) to November (11)
-# - Winter runs from December (12) to February (2)
+#        ___iiiii___
+#       |:H:a:p:p:y:|
+#     __|___________|__
+#    |^^^^^^^^^^^^^^^^^|
+#    |:B:i:r:t:h:d:a:y:|
+#    |                 |
+#    ~~~~~~~~~~~~~~~~~~~
 
-month = int(input("Enter a month (1-12): "))
+# The number of candles on the cake should be the last number of the users age, if they are 53, then add 3 candles.
 
-if month >= 3 and month <= 5:
-    print("Spring")
-elif month >= 6 and month <= 8:
-    print("Summer")
-elif month >= 9 and month <= 11:
-    print("Autumn")
-else:
-    print("Winter")
+# Bonus : If they were born on a leap year, display two cakes !
 
-# # Exercise 2
+birthdate = input("Enter your birthdate (DD/MM/YYYY): ")
+day, month, year = map(int, birthdate.split('/'))
+age = 2023 - year
+candles = age % 100
+if candles == 0:
+    candles = 100
+print("___iiiii___")
+print("|:H:a:p:p:y:|")
+print("|:B:i:r:t:h:d:a:y:|")        
+print(f"~{'~' * candles}~") 
 
-# Write a for loop to print all numbers from 1 to 20, inclusive.
-# Write another for loop that prints every number from 1 to 20 where the index is even. 
-
-for i in range(1, 21):
-    print(i)
-
-for i in range(1, 21, 2):
-    print(i)
-
-# # Exercise 3
-# Write a while loop that keeps asking the user to enter their name.
-# Stop the loop if the user’s input is your name. 
-
-name = input("Enter your name: ")
-
-while name != "AKA":
-    name = input("Enter your name: ")
-
-print("Hello, AKA!")
-
-# # Exercise 4
-
-
-# Ask a user for their name, if their name is in the names list print out the index of the first occurrence of the name.
-# Example: if input is Cortana we should be printing the index 1
-
-names = ['Samus', 'Cortana', 'V', 'Link', 'Mario', 'Cortana', 'Samus']
-
-name = input("Enter your name: ")
-
-if name in names:
-    index = names.index(name)
-    print(f"{name} is at index {index}")
-
-# # Exercise 5
-
-# Ask the user for 3 numbers and print the greatest number.
-
-
-
-
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
-num3 = int(input("Enter the third number: "))
-
-if num1 > num2 and num1 > num3:
-    greatest = num1
-elif num2 > num1 and num2 > num3:
-    greatest = num2
-else:
-    greatest = num3
