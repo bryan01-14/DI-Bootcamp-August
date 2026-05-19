@@ -60,8 +60,6 @@ if name in names:
 # Ask the user for 3 numbers and print the greatest number.
 
 
-
-
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
 num3 = int(input("Enter the third number: "))
@@ -72,6 +70,7 @@ elif num2 > num1 and num2 > num3:
     greatest = num2
 else:
     greatest = num3
+print(f"The greatest number is: {greatest}")
 
 # # Exercise 6
 
