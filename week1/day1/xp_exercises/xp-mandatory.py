@@ -1,9 +1,10 @@
 # # Exercise 1
 # Print the following output using one line of code
 
-for i in range(1,5):
-    print("Hello World")
-
+print("Hello World")
+print("Hello World")
+print("Hello World")
+print("Hello World")
 
 
 
