@@ -100,22 +100,23 @@ print(result)
 
 
 # La sortie devrait être : ."Nothing"
-
-
 items_purchase = {"Water": "$1", "Bread": "$3", "TV": "$1,000", "Fertilizer": "$20"}
 wallet = "$300"
 
 basket = []
 
+# Nettoyage du wallet une seule fois
+wallet_amount = int(wallet.replace("$", "").replace(",", ""))
+
 for item, price in items_purchase.items():
-    price = int(price.replace("$", "").replace(",", ""))
-    if price <= int(wallet.replace("$", "")):
+    # Nettoyage du prix
+    price_amount = int(price.replace("$", "").replace(",", ""))
+    
+    if price_amount <= wallet_amount:
         basket.append(item)
-        wallet = str(int(wallet.replace("$", "")) - price)
-    else:
-        continue
+        wallet_amount -= price_amount  # Mise à jour du portefeuille
 
 if len(basket) == 0:
     print("Nothing")
 else:
-    print(sorted(basket))        
+    print(sorted(basket))
