@@ -54,15 +54,23 @@ for name, age in family.items():
 print(f"Total cost : {total_cost} $")
 
 
+
+
 # Bonus :
 # Permettre à l’utilisateur de saisir les noms et âges des membres de la famille, puis de calculer le coût total du ticket.
 
 family = {}
+
 while True:
     name = input("Enter the name of the family member (or 'done' to finish): ")
     if name.lower() == 'done':
         break
-    age = int(input(f"Enter the age of {name}: "))
+    while True:
+        try:
+            age = int(input(f"Enter the age of {name}: "))
+            break
+        except ValueError:
+            print("Please enter a valid age.")
     family[name] = age
 
 total_cost = 0
@@ -108,6 +116,9 @@ print(f"Total cost : {total_cost} $")
 # Imprimez le nombre de clés dans le dictionnaire.
 # Imprimez toutes les clés du dictionnaire.
 
+# [Exercice 3] Dans l’Exercice 3, la logique d’ajouter « Desigual » à la liste des concurrents est légèrement incorrecte. L’instruction était de vérifier si la clé existait. Votre code vérifie si la valeur est déjà dans la liste (), ce qui sera faux, donc « Desigual » n’est jamais ajouté. La vérification correcte serait .international_competitors'Desigual'if "Desigual" in brand["international_competitors"]if "international_competitors" in brand:
+
+
 brand = {
     "name": "Zara",
     "creation_date": 1975,
@@ -121,12 +132,16 @@ brand = {
         "US": ["pink", "green"]
     }
     }
+
+
+
 brand["number_stores"] = 2
 print(f"Zara sells {', '.join(brand['type_of_clothes'])} clothes.")
 brand["country_creation"] = "Spain"
-if "Desigual" in brand["international_competitors"]:
-    brand["international_competitors"].append("Desigual")
-del brand["creation_date"]  
+if "international_competitors" in brand:
+    if "Desigual" not in brand["international_competitors"]:
+        brand["international_competitors"].append("Desigual")
+del brand["creation_date"] 
 print(brand["international_competitors"][-1])
 print(brand["major_color"]["US"])
 print(len(brand))
