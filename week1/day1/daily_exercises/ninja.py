@@ -1,9 +1,5 @@
 # # Exercise 1
 
-
-
-
-
 3 <= 3 < 9 # True 
 
 3 == 3 == 3 # True
