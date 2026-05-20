@@ -8,9 +8,11 @@
 
 number = int(input("Enter a number: "))
 length = int(input("Enter a length: "))
+liste = []
 
 for i in range(1, length + 1):
-    print(number * i)
+    liste.append(number * i)
+print(liste)
 
 
 # Challenge 2
