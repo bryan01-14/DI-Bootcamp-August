@@ -1,11 +1,4 @@
 # Exercice 1 : Chats
-# Sujets clés de Python :
-
-# Classes et objets
-# Instanciation d’objets
-# Attributs
-# Fonctions
-
 
 # Instructions :
 
