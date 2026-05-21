@@ -116,16 +116,6 @@ stairway.sing_me_a_song()
 
 
 
-# Sujets clés de Python :
-
-# Classes et objets
-# Instanciation d’objets
-# Méthodes
-# Listes
-# Dictionnaires (pour le regroupement)
-# Manipulation des cordes
-
-
 class Zoo:
     def __init__(self, zoo_name):
         self.animals = []
@@ -176,8 +166,8 @@ brooklyn_safari.get_groups()
 
 
 # Bonus : Modifie la méthode pour obtenir que vous n’ayez pas à la répéter à chaque fois pour un nouvel animal, vous pouvez passer plusieurs noms d’animaux séparés par une virgule.add_animal()*args
-def add_animal(self, *new_animals):   # le * transforme tout ce qui entre en une liste
-    for new_animal in new_animals:    # on boucle sur chaque animal reçu
+def add_animal(self, *new_animals):   
+    for new_animal in new_animals:    
         if new_animal not in self.animals:
             self.animals.append(new_animal)
         else:
