@@ -30,16 +30,6 @@ print(f"The oldest cat is {oldest_cat.name} and it is {oldest_cat.age} years old
 # But : Créez une classe, instanciez des objets, appelez des méthodes et comparez les tailles des chiens.Dog
 
 
-
-# Sujets clés de Python :
-
-# Classes et objets
-# Instanciation d’objets
-# Méthodes
-# Attributs
-# Énoncés conditionnels (if)
-
-
 # Instructions :
 
 # Créez une classe avec des méthodes pour aboyer et sauter. Instanciez des objets pour chiens, appelez leurs méthodes et comparez leurs tailles.Dog
@@ -73,18 +63,9 @@ if davids_dog.height > sarahs_dog.height:
     print(f"{davids_dog.name} is bigger than {sarahs_dog.name}.")
 else:
     print(f"{sarahs_dog.name} is bigger than {davids_dog.name}.")
+
 #  Exercice 3 : Qui est le producteur de la chanson ?
 # But : Créez une classe pour représenter les paroles des chansons et imprimez-les.Song
-
-
-
-# Sujets clés de Python :
-
-# Classes et objets
-# Instanciation d’objets
-# Méthodes
-# Listes
-
 
 # Instructions :
 
