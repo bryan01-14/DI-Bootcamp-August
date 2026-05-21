@@ -30,6 +30,14 @@ print(result)
 # Plus de 12 ans : 15 $
 
 
+# Données familiales :
+
+# family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
+
+
+# Parcourez le dictionnaire en boucle pour calculer le coût total.family
+# Imprimez le prix du billet pour chaque membre de la famille.
+# Imprimez le coût total à la fin.
 
 
 family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
