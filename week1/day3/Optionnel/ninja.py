@@ -1,83 +1,69 @@
 
-# Exercice 1 : Voitures
-# Copiez la chaîne suivante dans votre code : .Volkswagen, Toyota, Ford Motor, Honda, Chevrolet
-# Convertissez-le en liste avec Python (ne le faites pas à la main !).
-# Imprimez un message indiquant combien de fabricants/entreprises figurent sur la liste.
-# Imprimez la liste des fabricants dans l’ordre inverse/décroissant (Z-A).
-# Utilisation de boucles ou de compréhension de liste :
-# Découvrez combien contiennent la lettre.manufacturers’ nameso
-# Découvrez combien n’ont pas la lettre dedans.manufacturers’ namesi
 
-manufacturers = "Volkswagen, Toyota, Ford Motor, Honda, Chevrolet"
-manufacturers_list = manufacturers.split(", ")
-print("There are", len(manufacturers_list), "manufacturers.")
-manufacturers_list.reverse()
-print(manufacturers_list)   
+# Exercice 1 : Historique des appels
+# Instructions
+# Créez une classe appelée . Cette classe prend un paramètre appelé . Lors de l’instanciation d’un objet, créez un attribut appelé dont la valeur est une liste vide.Phonephone_numbercall_history
 
-manufacturers_with_a = [m for m in manufacturers_list if 'a' in m]
-print("Manufacturers with 'a':", manufacturers_with_a)
-manufacturers_without_a = [m for m in manufacturers_list if 'a' not in m]
-print("Manufacturers without 'a':", manufacturers_without_a) 
+# Ajoutez une méthode appelée qui prend à la fois et (c’est-à-dire un autre objet) comme paramètres. La méthode doit imprimer une chaîne indiquant qui a appelé qui, et ajouter cette chaîne à la chaîne du téléphone.callselfother_phonePhonecall_history
 
+# Ajoutez une méthode appelée . Cette méthode devrait imprimer le fichier .show_call_historycall_history
 
-# Bonus :
+# Ajoutez un autre attribut appelé à votre méthode dont la valeur est une liste vide.messages__init__()
 
-# Il y a quelques doublons dans cette liste : ["Honda", "Volkswagen", "Toyota", "Ford Motor", "Honda", "Chevrolet", "Toyota"]
-# Supprimez-les de façon programmatique. (Indice : vous pouvez utiliser un ensemble pour vous aider).
-# Imprimez les entreprises sans doublons, dans une chaîne séparée par des virgules sans sauts de ligne (par exemple, « Acura, Alfa Romeo, Aston Martin, ... »), et imprimez également un message indiquant combien d’entreprises figurent désormais dans la liste.
+# Créez une méthode appelée qui est similaire à la méthode. Chaque message doit être enregistré sous forme de dictionnaire avec les clés suivantes :send_messagecall
+# à : le nombre d’un autre objetPhone
+# De : votre numéro de téléphone (également un objet)Phone
+# Contenu
 
-manufacturers_with_duplicates = ["Honda", "Volkswagen", "Toyota", "Ford Motor", "Honda", "Chevrolet", "Toyota"]
-unique_manufacturers = set(manufacturers_with_duplicates)
-unique_manufacturers_list = list(unique_manufacturers)
-print("Unique manufacturers:", ", ".join(unique_manufacturers_list))
-print("There are", len(unique_manufacturers_list), "unique manufacturers.")
+# Créez les méthodes suivantes : , , show_outgoing_messages(self)show_incoming_messages(self)show_messages_from(self)
 
+# Testez votre code !!
+class Phone:
+    def __init__(self, phone_number):
+        self.phone_number = phone_number
+        self.call_history = []
+        self.messages = []
 
-
-# Bonus :
-
-# Imprimez la liste des fabricants dans l’ordre croissant (A à Z), mais inversez les lettres du nom de chaque fabricant.
-
-reversed_manufacturers = [m[::-1] for m in manufacturers_list]
-reversed_manufacturers.sort()
-print("Reversed manufacturers in ascending order:", reversed_manufacturers)
-
-
-
-# Exercice 2 : Comment vous appelez-vous ?
-# Écrivons une fonction appelée qui prend trois arguments : 1 : , 2 : , 3 : .get_full_name()first_namemiddle_namelast_name
-# middle_name devrait être optionnel ; Si l’utilisateur l’omet, le nom retourné ne doit contenir que le prénom et le nom de famille.
-# Par exemple, il retournera « John Hooker Lee ».
-# Mais il reviendra « Bruce Lee ».get_full_name(first_name="john", middle_name="hooker", last_name="lee")get_full_name(first_name="bruce", last_name="lee")
-
-def get_full_name(first_name, last_name, middle_name=None):
-    if middle_name:
-        return f"{first_name} {middle_name} {last_name}"
-    else:
-        return f"{first_name} {last_name}"
-    
-print(get_full_name(first_name="john", middle_name="hooker", last_name="lee"))
-print(get_full_name(first_name="bruce", last_name="lee"))
-
-# Exercice 3 : De l’anglais au morse
-# Écrivez une fonction qui convertit le texte anglais en code Morse et une autre qui fait l’inverse.
-# Indice : Cherchez sur internet un tableau de traduction, chaque lettre est séparée par un espace et chaque mot par une barre oblique /.
-
-morse_code_dict = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
-    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
-    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
-    ' ': '/'
-}    
-
-def english_to_morse(text):
-    morse_code = ' '.join([morse_code_dict[char.upper()] for char in text])
-    return morse_code    
-
-def morse_to_english(morse_code):    
-    inverse_morse_code_dict = {v: k for k, v in morse_code_dict.items()}
-    english_text = ''.join([inverse_morse_code_dict[code] for code in morse_code.split()])
-    return english_text    
-
-print(english_to_morse("Hello, world!"))    
-print(morse_to_english(".- .-.. .-.. .. -.-. -.-")) 
+    def call(self, other_phone):
+        call_record = f"{self.phone_number} a appelé {other_phone.phone_number}"
+        print(call_record)
+        self.call_history.append(call_record)    
+        other_phone.call_history.append(call_record)    
+    def show_call_history(self):
+        print(f"Historique des appels pour {self.phone_number} :")
+        for call in self.call_history:
+            print(call)    
+    def send_message(self, other_phone, content):
+        message_record = {
+            "to": other_phone.phone_number,
+            "from": self.phone_number,
+            "content": content
+        }
+        self.messages.append(message_record)
+        other_phone.messages.append(message_record)
+    def show_outgoing_messages(self):
+        print(f"Messages sortants pour {self.phone_number} :")
+        for message in self.messages:
+            if message["from"] == self.phone_number:
+                print(f"À {message['to']} : {message['content']}")
+    def show_incoming_messages(self):
+        print(f"Messages entrants pour {self.phone_number} :")
+        for message in self.messages:
+            if message["to"] == self.phone_number:
+                print(f"De {message['from']} : {message['content']}")   
+    def show_messages_from(self, other_phone):  
+        print(f"Messages de {other_phone.phone_number} pour {self.phone_number} :")
+        for message in self.messages:
+            if message["from"] == other_phone.phone_number and message["to"] == self.phone_number:
+                print(f"De {message['from']} : {message['content']}")
+# Testez votre code !!
+phone1 = Phone("123-456-7890")
+phone2 = Phone("987-654-3210")
+phone1.call(phone2)
+phone2.call(phone1)
+phone1.send_message(phone2, "Salut !")
+phone2.send_message(phone1, "Bonjour !")
+phone1.show_call_history()
+phone1.show_outgoing_messages()
+phone1.show_incoming_messages()
+phone1.show_messages_from(phone2)   
