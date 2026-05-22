@@ -1,9 +1,6 @@
 import sys
 
 
-# ============================================================
-# Partie I : Classe BankAccount
-# ============================================================
 
 class BankAccount:
     """A class to represent a bank account."""

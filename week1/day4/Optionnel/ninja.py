@@ -3,9 +3,7 @@ import time
 import os
 
 
-# ============================================================
-# Classe Cell
-# ============================================================
+
 
 class Cell:
     """A class to represent a single cell in the grid."""
