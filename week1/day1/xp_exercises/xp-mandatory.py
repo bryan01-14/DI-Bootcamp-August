@@ -1,7 +1,7 @@
 # # Exercise 1
 # Print the following output using one line of code
 
-print("Hello World \n" *4) 
+print("Hello world\n" * 4)
 
 
 
@@ -16,14 +16,17 @@ print(result2)
 # # Exercise 3
 
 # Predict the output of the following code snippets:
-# Coment what is your guess, then run the code and compare
+# Comment what is your guess, then run the code and compare
 
-5 < 3 # False
-3 > 5 # False
-3 == 3 # True
-3 == "3" # False
-"3" > 3 # True
-"Hello" == "hello" # False
+5 < 3   # Prediction: False  — Result: False
+3 > 5   # Prediction: False  — Result: False
+3 == 3  # Prediction: True   — Result: True
+3 == "3"  # Prediction: False  — Result: False
+# "3" > 3   # Prediction: True  — CORRECTION: raises TypeError in Python 3
+            # Python 3 does not allow comparing a string and an integer with < or >.
+            # Running this line produces: TypeError: '>' not supported between instances of 'str' and 'int'
+            # The comparison "3" > 3 would only be valid in Python 2 (where it returned True).
+"Hello" == "hello"  # Prediction: False  — Result: False
 
 
 # # Exercise 4
@@ -47,7 +50,7 @@ print(info)
 # # Exercise 6
 
 # Create two variables, a and b.
-# Each variable’s value should be a number.
+# Each variable's value should be a number.
 # If a is bigger than b, have your code print "Hello World"
 a = 10
 b = 5
@@ -57,7 +60,6 @@ if a > b:
 # # Exercise 7
 
 # Write code that asks the user for a number and determines whether this number is odd or even.
-
 
 try:
     number = int(input("Enter a number: "))
@@ -70,19 +72,24 @@ except ValueError:
 
 # # Exercise 8
 
-# Write code that asks the user for their name and determines whether or not you have the same name. Print out a funny message based on the outcome.
-name = input("What is your name? ")
-if name == "AKA":    
-    print("We have the same name!")
-else:
-    print("We don't have the same name.")
+# Write code that asks the user for their name and determines whether or not you have the same name.
+# Print out a funny message based on the outcome.
+
+try:
+    user_name = input("What is your name? ")
+    if not user_name.strip():
+        raise ValueError("Name cannot be empty.")
+    if user_name.strip() == "AKA":
+        print("No way, we have the same name! Are you my long-lost twin?!")
+    else:
+        print(f"Nice to meet you, {user_name.strip()}! We don't share a name, but we can still be friends.")
+except ValueError as e:
+    print(f"Invalid input: {e}")
 
 # # Exercise 9
 # Write code that will ask the user for their height in centimeters.
 # If they are over 145 cm, print a message that states they are tall enough to ride.
 # If they are not tall enough, print a message that says they need to grow some more to ride.
-
-
 
 try:
     height = int(input("What is your height in centimeters? "))
@@ -91,4 +98,4 @@ try:
     else:
         print("You need to grow some more to ride.")
 except ValueError:
-    print("Please enter a valid height in centimeters.")    
+    print("Please enter a valid height in centimeters.")
